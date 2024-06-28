@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIS DASHBOARD</title>
+    <link rel="icon" href="info.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        :root {
+            --pink: #c72092;
+            --purple: #6c14d0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        iframe {
+            height: 675px;
+            width: 100%;
+        }
+
+        nav {
+            background: linear-gradient(to right, var(--pink), var(--purple));
+        }
+
+        .dropdown-menu {
+            background-color: #ffffff; /* White background */
+            border: none; /* Remove border */
+            padding: 1px; /* Reduced padding */
+            transition: all 0.3s ease;
+            display: none; /* Initially hide dropdown */
+            position: absolute;
+            z-index: 1000;
+        }
+
+        .dropdown-menu.show {
+            display: block; /* Show dropdown when hovered */
+        }
+
+        .dropdown-item {
+            color: #000000; /* Black text */
+            background-color: #ffffff; /* White background */
+            padding: 10px 20px; /* Padding for dropdown items */
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--pink); /* Pink gradient for hover */
+            color: #ffffff; /* White text for hover */
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link,
+        .dropdown-item {
+            font-size: 20px;
+        }
+
+        .navbar-nav .nav-item {
+            padding-left: 15px;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-brand,
+            .navbar-nav .nav-link,
+            .dropdown-item {
+                font-size: 18px;
+            }
+
+            .dropdown-menu {
+                padding: 0; /* Adjusted for smaller devices */
+                border: none; /* Remove border */
+            }
+
+            .dropdown-item {
+                background: none;
+            }
+
+            .dropdown-item:hover {
+                background-color: var(--pink);
+                color: #ffffff;
+            }
+
+            .navbar-nav .nav-item {
+                padding-left: 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand,
+            .navbar-nav .nav-link,
+            .dropdown-item {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .navbar-brand,
+            .navbar-nav .nav-link,
+            .dropdown-item {
+                font-size: 15px;
+            }
+
+            .navbar-nav .nav-item {
+                margin-left: auto;
+                padding-right: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed">
+        <a class="navbar-brand" href="index.html">CIS DASHBOARD</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse div text-right-md" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Attack Type
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="malware.html">Malware</a></li>
+                        <li><a class="dropdown-item" href="ddos.html">DDoS</a></li>
+                        <li><a class="dropdown-item" href="#">Intrusion</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Protocol
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="tcp.html">TCP</a></li>
+                        <li><a class="dropdown-item" href="udp.html">UDP</a></li>
+                        <li><a class="dropdown-item" href="icmp.html">ICMP</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Severity Level
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="low.html">Low</a></li>
+                        <li><a class="dropdown-item" href="medium.html">Medium</a></li>
+                        <li><a class="dropdown-item" href="high.html">High</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Log Source
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="server.html">Server</a></li>
+                        <li><a class="dropdown-item" href="firewall.html">Firewall</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Anomaly Scores
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="less50.html">>50</a></li>
+                        <li><a class="dropdown-item" href="greater50.html"> &lt;50</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Action Taken
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="logged.html">Logged</a></li>
+                        <li><a class="dropdown-item" href="blocked.html">Blocked</a></li>
+                        <li><a class="dropdown-item" href="ignored.html">Ignored</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="visualization.html">Visualization</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <iframe class="map_1" src="2c.html" frameborder="0" allowfullscreen></iframe>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript to activate dropdown on hover
+        $(document).ready(function () {
+            $('.nav-item.dropdown').hover(function () {
+                $(this).find('.dropdown-menu').addClass('show');
+            }, function () {
+                $(this).find('.dropdown-menu').removeClass('show');
+            });
+        });
+    </script>
+</body>
+
+</html>
